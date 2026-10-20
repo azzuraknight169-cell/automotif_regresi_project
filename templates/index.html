@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prediksi Efisiensi BBM Mobil</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body{background:#f2f5f9;color:#203044;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+    .hero{background:linear-gradient(135deg,#172e4d,#276678);color:white;border-radius:22px;padding:2rem}
+    .panel{border:0;border-radius:18px;box-shadow:0 12px 35px rgba(25,45,65,.08)}
+    .result{background:#e8f5ee;border-radius:14px;padding:1rem;color:#14532d}
+    .small-note{font-size:.9rem;color:#637083}
+    .btn-main{background:#1c6e78;color:white;border:0}.btn-main:hover{background:#155761;color:white}
+  </style>
+</head>
+<body>
+<div class="container py-5" style="max-width:920px">
+  <div class="hero mb-4">
+    <p class="text-uppercase small mb-2">Proyek Regresi Linear Sederhana</p>
+    <h1 class="h2 fw-bold">Prediksi Efisiensi BBM Mobil</h1>
+    <p class="mb-0">Estimasi MPG di jalan raya berdasarkan kapasitas mesin kendaraan.</p>
+  </div>
+  <div class="card panel"><div class="card-body p-4 p-md-5">
+    <h2 class="h4 mb-2">Masukkan kapasitas mesin</h2>
+    <p class="text-secondary">Gunakan satuan liter. Rentang data model: 1,6-7,0 liter.</p>
+    <form method="post" class="row g-3 align-items-end">
+      <div class="col-md-8"><label for="displ" class="form-label">Kapasitas mesin (liter)</label>
+        <input id="displ" name="displ" type="number" min="1.6" max="7.0" step="0.1" value="{{ displ_value }}" class="form-control form-control-lg" placeholder="Contoh: 2.0" required></div>
+      <div class="col-md-4"><button class="btn btn-main btn-lg w-100" type="submit">Prediksi</button></div>
+    </form>
+    {% if error %}<div class="alert alert-warning mt-4 mb-0">{{ error }}</div>{% endif %}
+    {% if prediction is not none %}<div class="result mt-4"><div class="small text-uppercase fw-semibold">Estimasi efisiensi jalan raya</div><div class="display-6 fw-bold">{{ "%.2f"|format(prediction) }} MPG</div><p class="mb-0">Nilai ini adalah estimasi dari model, bukan jaminan konsumsi aktual kendaraan tertentu.</p></div>{% endif %}
+  </div></div>
+  <div class="row g-4 mt-1"><div class="col-md-7"><div class="card panel h-100"><div class="card-body p-4"><h2 class="h5">Tentang model</h2><p>Model dilatih menggunakan dataset mpg (234 observasi) dengan variabel kapasitas mesin (<code>displ</code>) dan efisiensi jalan raya (<code>hwy</code>).</p><p class="small-note mb-0">Sumber data: dokumentasi plotnine/ggplot2. Data merupakan subset catatan efisiensi bahan bakar mobil dari 1999 dan 2008.</p></div></div></div>
+  <div class="col-md-5"><div class="card panel h-100"><div class="card-body p-4"><h2 class="h5">Catatan penggunaan</h2><p class="small-note mb-0">Model memakai satu variabel dan mengabaikan faktor lain seperti jenis transmisi, bobot, jumlah silinder, dan kelas kendaraan. Gunakan hasil sebagai perkiraan edukatif.</p></div></div></div></div>
+  <p class="text-center small-note mt-4">Bayu Muhammad Ramadhan · 301240008 · Kelas 5A</p>
+</div></body></html>

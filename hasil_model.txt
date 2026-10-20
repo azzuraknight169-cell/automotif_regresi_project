@@ -1,0 +1,7 @@
+Jumlah observasi: 234
+Data latih: 187
+Data uji: 47
+Persamaan: hwy = 36.162015 + (-3.652784 x displ)
+R-squared: 0.527513
+MAE: 2.484414 MPG
+RMSE: 3.539139 MPG

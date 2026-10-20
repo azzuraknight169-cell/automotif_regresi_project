@@ -1,0 +1,20 @@
+{
+  "observations_total": 234,
+  "features": 1,
+  "train_rows": 187,
+  "test_rows": 47,
+  "intercept": 36.16201528284085,
+  "coefficient_displ": -3.652783684777441,
+  "r2": 0.5275128977937189,
+  "mae": 2.484414002368684,
+  "mse": 12.525506883295527,
+  "rmse": 3.5391392856590893,
+  "correlation": -0.7660200208864681,
+  "min_displ": 1.6,
+  "max_displ": 7.0,
+  "min_hwy": 12,
+  "max_hwy": 44,
+  "mean_displ": 3.4717948717948723,
+  "mean_hwy": 23.44017094017094,
+  "missing_selected": 0
+}
